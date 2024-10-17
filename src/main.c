@@ -44,7 +44,7 @@ int main(int argc, char** argv)
         printf("Freak out!\n");
     }
 
-    model_t * m = model_load("");
+    model_t * m = model_load("../../src/suzanne.obj");
 
     if (!m)
     {
@@ -108,8 +108,8 @@ int main(int argc, char** argv)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         mat4x4_rotate(&model, GLMM_RAD(0.25f), &up);
-        mat4x4_rotate(&model, GLMM_RAD(0.25f), &right);
-        mat4x4_rotate(&model, GLMM_RAD(0.25f), &forward);
+        // mat4x4_rotate(&model, GLMM_RAD(-0.15f), &right);
+        // mat4x4_rotate(&model, GLMM_RAD(0.15f), &forward);
 
         glmm_mat4x4_xmul(&mvp, &projection, &view);
         glmm_mat4x4_mul(&mvp, &model);

@@ -37,7 +37,7 @@ add_custom_command(
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}
 )
 
-file(GLOB _srclist src/*)
+file(GLOB _srclist src/*.c src/*.h)
 
 add_executable(CGL ${_srclist} passthru.vert.spv halfLambert.frag.spv)
 
